@@ -27,3 +27,4 @@ streamlit run src/run.py
 - gestion CSV/pandas
 - add evaluation pipeline
 - données : matomo, github...
+- quelles sont les prochaines formations ?

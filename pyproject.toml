@@ -2,7 +2,7 @@
 name = "index1"
 version = "0.1.0"
 description = ""
-authors = ["Julien Bouquillon <julien.bouquillon@sg.social.gouv.fr>"]
+authors = ["Julien Bouquillon <julien.bouquillon@beta.gouv.fr>"]
 
 [tool.poetry.dependencies]
 python =  ">=3.11,<3.12"
@@ -18,10 +18,10 @@ mypy = "^1.5.1"
 streamlit = "^1.31.1"
 openai = "^1.12.0"
 llama-index-readers-file = "^0.1.5"
-watchdog = "^4.0.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
+watchdog = "^4.0.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

@@ -6,9 +6,16 @@ set +e
 OUT="./content"
 
 mkdir "$OUT" || true
+rm master.zip || true
 
-tiged https://github.com/betagouv/doc.incubateur.net-communaute "$OUT/documentation-beta" && rm -rf "$OUT/documentation-beta/.git" 
-tiged https://github.com/betagouv/beta.gouv.fr/content/_incubators "$OUT/incubators-beta" && rm -rf "$OUT/incubators-beta/.git" 
-tiged https://github.com/betagouv/beta.gouv.fr/content/_startups "$OUT/startups-beta" && rm -rf "$OUT/startups-beta/.git" 
-#tiged https://github.com/betagouv/beta.gouv.fr/content/_organisations "$OUT/organisations-beta" && rm -rf "$OUT/organisations-beta/.git" 
+wget https://github.com/betagouv/beta.gouv.fr/archive/refs/heads/master.zip
+unzip master.zip
+mv beta.gouv.fr-master/content/_startups $OUT/startups-beta
+rm master.zip
+rm -rf beta.gouv.fr-master
 
+wget https://github.com/betagouv/doc.incubateur.net-communaute/archive/refs/heads/master.zip
+unzip master.zip
+mv doc.incubateur.net-communaute-master $OUT/documentation-beta
+rm master.zip
+rm -rf doc.incubateur.net-communaute-master
