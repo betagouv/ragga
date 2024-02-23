@@ -1,3 +1,22 @@
+# 1.0.0 (2024-02-23)
+
+
+### Bug Fixes
+
+* add GH workflows ([0a0c46f](https://github.com/betagouv/ragga/commit/0a0c46f36d98c1133f9dfefa47582958253f0cd9))
+* add preprod secrets ([2612cd7](https://github.com/betagouv/ragga/commit/2612cd71051870dcd351c52f9cfab0a49bfb5e22))
+* docs ([cdbf03d](https://github.com/betagouv/ragga/commit/cdbf03d5f5856cd0d2395323aa1531ade326dce8))
+* increase cpu ([28b6741](https://github.com/betagouv/ragga/commit/28b67415963f253194efb7937a3d377a4a2312ea))
+* less docs ([#8](https://github.com/betagouv/ragga/issues/8)) ([c2068bc](https://github.com/betagouv/ragga/commit/c2068bc9797b371220a9a447afdc74e1bbbf44b1))
+* notion ([96eb848](https://github.com/betagouv/ragga/commit/96eb84839b5b68f55568ba724767cff75562c9cf))
+* release ([db550cb](https://github.com/betagouv/ragga/commit/db550cb5a98ee157f4f0a283a0d1325dd9a90004))
+* startupProbe ([0da4490](https://github.com/betagouv/ragga/commit/0da4490bc906dff8a0c5ed7fc909dffcbaee76c8))
+
+
+### Features
+
+* upgrade llama-index ([fa7fb8b](https://github.com/betagouv/ragga/commit/fa7fb8b3f8c9a2ff0bd0bbaa689b1b1166894322))
+
 ## [1.0.6](https://github.com/SocialGouv/ragga/compare/v1.0.5...v1.0.6) (2023-11-03)
 
 
