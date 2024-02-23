@@ -1,3 +1,11 @@
+## [1.0.1](https://github.com/betagouv/ragga/compare/v1.0.0...v1.0.1) (2024-02-23)
+
+
+### Bug Fixes
+
+* cleanup ([4ac3030](https://github.com/betagouv/ragga/commit/4ac303068b4af22ce5b7dd0d1e98916f01d47fda))
+* dOCocker ([7bd22b5](https://github.com/betagouv/ragga/commit/7bd22b5bbac1e488a357923454da2935f6724191))
+
 # 1.0.0 (2024-02-23)
 
 
