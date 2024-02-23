@@ -1,10 +1,7 @@
 import re
-import logging
-import sys
 import os.path
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple, cast
-import frontmatter
+from typing import Dict, List, Optional
 
 from llama_index.core import PromptTemplate
 from llama_index.core.schema import Document
@@ -39,7 +36,11 @@ PERSIST_DIR = "./storage"
 
 def get_doc_metadata(filename):
     url = "https://doc.incubateur.net/communaute/{}".format(
-        re.sub(".md$", "", re.sub("^content/documentation-beta/", "", filename))
+        re.sub(
+            "/README$",
+            "",
+            re.sub(".md$", "", re.sub("^content/documentation-beta/", "", filename)),
+        )
     )
     return {"url": url}
 
