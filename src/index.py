@@ -56,27 +56,34 @@ def get_startup_metadata(filename):
 # check if storage already exists
 if not os.path.exists(PERSIST_DIR):
     # load the documents and create the index
+    print("Create database from scratch")
+    print("Ingest ./content/documentation-beta/...")
     docs = SimpleDirectoryReader(
         "./content/documentation-beta/",
         file_metadata=get_doc_metadata,
         recursive=True,
         exclude=["SUMMARY.md", "README.md"],
     ).load_data()
+    print("Ingest ./content/startups-beta/...")
     startups = SimpleDirectoryReader(
         "./content/startups-beta",
         required_exts=[".md"],
         file_extractor={".md": StartupMarkdownReader()},
         file_metadata=get_startup_metadata,
     ).load_data()
-    index = VectorStoreIndex.from_documents([*docs, *startups], show_progress=True)
+    documents = [*docs, *startups]
+    print("Create vector store from {} documents".format(len(documents)))
+    index = VectorStoreIndex.from_documents(documents, show_progress=True)
     # store it for later
+    print("Persist store to {}".format(PERSIST_DIR))
     index.storage_context.persist(persist_dir=PERSIST_DIR)
 else:
     # load the existing index
     print("Loading existing database")
     storage_context = StorageContext.from_defaults(persist_dir=PERSIST_DIR)
     index = load_index_from_storage(storage_context)
-    print("✔ Loaded")
+
+print("✔ Store ready")
 
 
 qa_prompt_tmpl_str = (
