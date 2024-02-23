@@ -14,7 +14,7 @@ ENV POETRY_VIRTUALENVS_IN_PROJECT=true
 ENV VIRTUAL_ENVIRONMENT_PATH="/app/.venv"
 ENV PATH="$VIRTUAL_ENVIRONMENT_PATH/bin:$PATH"
 
-RUN poetry install --no-interaction --only-main
+RUN poetry install --no-interaction --only=main
 
 # root-less image
 RUN groupadd -g 1001 app && useradd -r -u 1001 -g app app -d /app
