@@ -42,7 +42,7 @@ st.title(
     "Interrogez la doc de betagouv",
 )
 st.info(
-    "Détail des sources utilisées : \n\n - doc.incubateur.net\n\n - beta.gouv.fr/startups\n\n:warning: Bot expérimental, retours bienvenus sur [sur GitHub](https://github.com/betagouv/ragga/issues/new)\n\n",
+    "Sources utilisées : \n\n - [doc.incubateur.net](https://doc.incubateur.net)\n\n - [beta.gouv.fr/startups](https://github.com/betagouv/beta.gouv.fr/blob/master/content/_startups/)\n\n:warning:  Bot expérimental, retours bienvenus [sur GitHub](https://github.com/betagouv/ragga/issues/new)\n\n",
     icon="💡",
 )
 
