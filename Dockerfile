@@ -1,30 +1,27 @@
-# app/Dockerfile
+FROM python:3.11 AS base
 
-FROM python:3.11-slim
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    POETRY_VIRTUALENVS_IN_PROJECT=true \
+    POETRY_NO_INTERACTION=1
+
+ENV PATH="/app/.venv/bin:$PATH"
+
+# Stage/Builder
+FROM base AS stage
 
 WORKDIR /app
+RUN pip install poetry
 
-RUN apt-get update && apt-get install -y wget unzip && rm -rf /var/lib/apt/lists/*
+COPY pyproject.toml poetry.lock /app/
 
-RUN pip install --upgrade pip && pip install poetry
+RUN poetry install --only=main
 
-COPY pyproject.toml /app
+COPY . /app/
 
-ENV POETRY_VIRTUALENVS_IN_PROJECT=true
-ENV VIRTUAL_ENVIRONMENT_PATH="/app/.venv"
-ENV PATH="$VIRTUAL_ENVIRONMENT_PATH/bin:$PATH"
-
-RUN poetry install --no-interaction --only=main
-
-# root-less image
-RUN groupadd -g 1001 app && useradd -r -u 1001 -g app app -d /app
-
-RUN chown -R app:app /app
-
-COPY . /app
-
-HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
-
-USER 1001
+# Production
+FROM base AS prod
+WORKDIR /app
+COPY --from=stage /app /app
 
 ENTRYPOINT ["./entrypoint.sh"]
