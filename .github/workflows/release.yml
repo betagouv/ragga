@@ -13,3 +13,5 @@ jobs:
       - uses: socialgouv/workflows/actions/semantic-release@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          author-name: BetaBot
+          author-email: BetaBot@BetaBot.com
