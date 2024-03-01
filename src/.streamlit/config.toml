@@ -5,7 +5,7 @@ gatherUsageStats = false
 level = debug
 
 [client]
-toolbarMode = developer
+toolbarMode = viewer
 
 [theme]
-base = "light
+base = "light"

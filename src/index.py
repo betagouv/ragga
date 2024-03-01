@@ -80,8 +80,12 @@ if not os.path.exists(PERSIST_DIR):
 else:
     # load the existing index
     print("Loading existing database")
-    storage_context = StorageContext.from_defaults(persist_dir=PERSIST_DIR)
-    index = load_index_from_storage(storage_context)
+    # storage_context = StorageContext.from_defaults(persist_dir=PERSIST_DIR)
+    # index = load_index_from_storage(storage_context)
+    index = VectorStoreIndex.from_documents(
+        [Document(text="blabla")], show_progress=True
+    )
+
 
 print("✔ Store ready")
 

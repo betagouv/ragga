@@ -3658,6 +3658,20 @@ watchdog = {version = ">=2.1.5", markers = "platform_system != \"Darwin\""}
 snowflake = ["snowflake-connector-python (>=2.8.0)", "snowflake-snowpark-python (>=0.9.0)"]
 
 [[package]]
+name = "streamlit-feedback"
+version = "0.1.3"
+description = "Streamlit component that allows you to collect user feedback in your apps"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "streamlit-feedback-0.1.3.tar.gz", hash = "sha256:90f198a4e116e901aaf08058261d444f0abcd3a365bac8c5d6fc08a3c05e02a2"},
+    {file = "streamlit_feedback-0.1.3-py3-none-any.whl", hash = "sha256:533082aa7b0978692527a46ef63d520db50be79d43a436baa6c2d11a1d93fe9d"},
+]
+
+[package.dependencies]
+streamlit = ">=0.63"
+
+[[package]]
 name = "sympy"
 version = "1.12"
 description = "Computer algebra system (CAS) in Python"
@@ -4545,4 +4559,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.11,<3.12"
-content-hash = "5895bfe6e2be21c11950dc4551fd37fe55aa1139723367e59470c4d4631f17c3"
+content-hash = "1259f019769491845ac2a4eb724f59d3fe6a07ddabf368cb5853d8963410bd48"
